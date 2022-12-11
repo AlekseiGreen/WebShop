@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-1">
+
+        {% for BS in bigShop %}
+        <div class="col-4">
+          <div class="card">
+            {% if BS.image %}
+              <a href="/product/{{BS.id}}" class="btn btn-link"> <img src="{{BS.image}}" class="rounded-4 card-img-top" alt="..."> </a>
+            {% else %}
+              <a href="/product/{{BS.id}}" class="btn btn-link"> <img src="https://dvmn.org/filer/canonical/1569944855/354/" class="rounded-5 card-img-top" alt="..."> </a>
+            {% endif %}
+            <div class="card-body">
+              <a href="/product/{{BS.id}}" class="btn btn-link"><h5 class="card-title">{{BS.title}}</h5></a>
+              <p class="card-text"><b>{{BS.price}} &#8381;</b></p>
+              <p class="card-text"><small class="text-muted">Последнее обновление {{ BS.date }}</small></p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

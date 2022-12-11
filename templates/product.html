@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-1">
+
+        <div class="card mr-3 mb-3" style="max-width: 1300px;">
+          <div class="media">
+            {% if bigShop.image %}
+              <img src="{{ bigShop.image }}" class="rounded-5 my-1 mr-3" style="max-width: 50%; max-height: 300px;" alt="...">
+            {% else %}
+              <img src="https://dvmn.org/filer/canonical/1569944855/354/" class="rounded-5 my-1 mr-3" style="max-width: 50%; max-height: 300px;" alt="...">
+            {% endif %}
+            <div class="media-body">
+              <h5 class="mt-0">{{ bigShop.title }}</h5>
+              <p class="card-text"><b>{{ bigShop.price }} &#8381;</b></p>
+              {{ bigShop.description }}.
+            </div>
+            <p class="card-text"><small class="text-muted">Последнее обновление {{ bigShop.date }}</small></p>
+          </div>
+        </div>
+
+
+        <div class="card mr-3 mb-3" style="max-width: 1300px;">
+          Tell: {{ bigShop.tell }}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

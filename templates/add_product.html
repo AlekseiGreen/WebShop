@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<div class="container mt 5">
+    <h1>Добавление продукта</h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Введите название товара"><br>
+        <textarea name="price" id="price" class="form-control" placeholder="Введите цену"></textarea><br>
+        <textarea name="description" id="description" class="form-control" placeholder="Введите описание товара"></textarea><br>
+        <textarea name="image" id="image" class="form-control" placeholder="Загрузить фото"></textarea><br>
+        <textarea name="tell" id="tell" class="form-control" placeholder="Введите номер телефона"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Создать">
+    </form>
+    
+</div>
+{% endblock %}
